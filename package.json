@@ -1,0 +1,55 @@
+{
+  "name": "to-middle-chinese",
+  "version": "0.1.0",
+  "description": "中古漢語自動標註工具 Middle Chinese Pronunciation Automatic Labeling Tool",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "src",
+    "dist"
+  ],
+  "scripts": {
+    "postinstall": "node preprocess.js",
+    "build": "rollup -c",
+    "start": "rollup -c -w",
+    "prepublish": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nk2028/to-middle-chinese.git"
+  },
+  "keywords": [
+    "traditional-chinese",
+    "simplified-chinese",
+    "chinese-characters",
+    "chinese",
+    "middle-chinese",
+    "linguistics",
+    "historical-linguistics",
+    "nlp",
+    "natural-language-processing"
+  ],
+  "author": "Ngiox Khyen 2028 Project",
+  "license": "CC0-1.0",
+  "bugs": {
+    "url": "https://github.com/nk2028/to-middle-chinese/issues"
+  },
+  "homepage": "https://github.com/nk2028/to-middle-chinese#readme",
+  "dependencies": {
+    "opencc": "^1.1.3"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.18",
+    "@typescript-eslint/eslint-plugin": "^5.48.0",
+    "@typescript-eslint/parser": "^5.48.0",
+    "eslint": "^8.31.0",
+    "qieyun": "^0.13.5",
+    "qieyun-examples": "^20220826.0.2",
+    "rollup": "^2.79.1",
+    "rollup-plugin-string": "^3.0.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript2": "^0.34.1",
+    "typescript": "^4.9.4"
+  }
+}
