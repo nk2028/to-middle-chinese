@@ -1,4 +1,5 @@
 import typescript from "rollup-plugin-typescript2";
+import { nodeResolve } from "@rollup/plugin-node-resolve";
 import { string } from "rollup-plugin-string";
 import terser from "@rollup/plugin-terser";
 import dts from "rollup-plugin-dts";
@@ -15,7 +16,7 @@ export default [
       name: "ToMiddleChinese",
       sourcemap: true,
     },
-    plugins: [typescript(), string({ include: "**/*.dict.yaml" }), terser()],
+    plugins: [typescript(), nodeResolve(), string({ include: "**/*.dict.yaml" }), terser()],
   },
   {
     input: "./dist/index.d.ts",

@@ -170,14 +170,14 @@ const sourceFiles = ["chars.tsv", "words.tsv", "extra_words.tsv"];
  */
 async function generate(name, conv) {
   const dict = [];
-  for (const path of sourceFiles) {
-    console.log(`${name}:\treading ${path}`);
-    await extendFromTsv(dict, path, conv);
+  for (const file of sourceFiles) {
+    console.log(`${name}:\treading ${file}`);
+    await extendFromTsv(dict, `dict/${file}`, conv);
   }
   console.log(`${name}:\twriting dict`);
   await pipeline(
     uniqSortedLines(dict),
-    createWriteStream(`src/dict/${name}.dict.yaml`)
+    createWriteStream(`dict/${name}.dict.yaml`)
   );
 }
 
@@ -193,9 +193,6 @@ const schemas = [
   ["unt", makeConverter(unt, { 精一侵上: "=精三侵上" })],
 ];
 
-download("https://cdn.jsdelivr.net/npm/opencc-data@1.0.8/data/HKVariantsRev.txt", "src/dict/HKVariantsRev.txt")
-download("https://cdn.jsdelivr.net/npm/opencc-data@1.0.8/data/HKVariantsRevPhrases.txt", "src/dict/HKVariantsRevPhrases.txt")
-
 Promise
-  .all(sourceFiles.map(path => download(`https://raw.githubusercontent.com/nk2028/rime-dict-source/df307c8/${path}`, path)))
+  .all(sourceFiles.map(file => download(`https://raw.githubusercontent.com/nk2028/rime-dict-source/df307c8/${file}`, `dict/${file}`)))
   .then(() => schemas.map(args => generate(...args)));

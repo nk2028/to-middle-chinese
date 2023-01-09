@@ -1,8 +1,7 @@
-import { OpenCC } from "opencc";
-import { resolve } from "path";
+import { ConverterFactory } from "opencc-js/core";
+import { from } from "opencc-js/preset";
 
-const ccS = new OpenCC("s2t.json");
-const ccHK = new OpenCC(resolve(__dirname, "../src/dict/hk2t.json"));
+const converter = ConverterFactory(from.cn, from.hk);
 
 type Node = Map<string, Node> & { v?: string };
 
@@ -19,7 +18,7 @@ export default class Trie {
 
   get(s: string) {
     const r: [string, string | null][] = [];
-    for (let a = Array.from(s), b = Array.from(ccHK.convertSync(ccS.convertSync(s))), i = 0; i < a.length; ) {
+    for (let a = Array.from(s), b = Array.from(converter(s)), i = 0; i < a.length; ) {
       let t = this.t,
         c = "",
         k = i + 1;

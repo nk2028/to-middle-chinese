@@ -1,8 +1,8 @@
 import Trie from "./Trie";
-import pos from "./dict/pos.dict.yaml";
-import tupa from "./dict/tupa.dict.yaml";
-import kyonh from "./dict/kyonh.dict.yaml";
-import unt from "./dict/unt.dict.yaml";
+import pos from "../dict/pos.dict.yaml";
+import tupa from "../dict/tupa.dict.yaml";
+import kyonh from "../dict/kyonh.dict.yaml";
+import unt from "../dict/unt.dict.yaml";
 
 function loadDict(data: string): Trie {
   const t = new Trie();
