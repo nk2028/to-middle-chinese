@@ -1,4 +1,4 @@
-import * as ToJyutping from "./main";
+import * as ToMiddleChinese from "./main";
 
-export default ToJyutping;
+export default ToMiddleChinese;
 export * from "./main";

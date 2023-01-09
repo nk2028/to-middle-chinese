@@ -2,7 +2,7 @@ import { OpenCC } from "opencc";
 import { resolve } from "path";
 
 const ccS = new OpenCC("s2t.json");
-const ccHK = new OpenCC(resolve("../dict/hk2t.json"));
+const ccHK = new OpenCC(resolve(__dirname, "../src/dict/hk2t.json"));
 
 type Node = Map<string, Node> & { v?: string };
 

@@ -48,9 +48,9 @@ export const getUntList = (s: string) => getMiddleChineseList(s, dictUnt);
 export const getPos = (s: string) => getMiddleChinese(s, dictPos);
 export const getTupa = (s: string) => getMiddleChinese(s, dictTupa);
 export const getKyonh = (s: string) => getMiddleChinese(s, dictKyonh);
-export const getUnt = (s: string) => getMiddleChinese(s, dictUnt);
+export const getUnt = (s: string) => getMiddleChinese(s, dictUnt, "[%s]");
 
-export const getUntText = (s: string) => getMiddleChineseText(s, dictUnt);
 export const getPosText = (s: string) => getMiddleChineseText(s, dictPos);
 export const getTupaText = (s: string) => getMiddleChineseText(s, dictTupa);
 export const getKyonhText = (s: string) => getMiddleChineseText(s, dictKyonh);
+export const getUntText = (s: string) => getMiddleChineseText(s, dictUnt, ".");

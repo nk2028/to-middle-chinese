@@ -2,7 +2,6 @@
   "name": "to-middle-chinese",
   "version": "0.1.0",
   "description": "中古漢語自動標註工具 Middle Chinese Pronunciation Automatic Labeling Tool",
-  "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -10,7 +9,7 @@
     "dist"
   ],
   "scripts": {
-    "postinstall": "node preprocess.js",
+    "postinstall": "node preprocess.mjs",
     "build": "rollup -c",
     "start": "rollup -c -w",
     "prepublish": "npm run build"
@@ -40,15 +39,17 @@
     "opencc": "^1.1.3"
   },
   "devDependencies": {
+    "@rollup/plugin-terser": "^0.3.0",
     "@types/node": "^18.11.18",
     "@typescript-eslint/eslint-plugin": "^5.48.0",
     "@typescript-eslint/parser": "^5.48.0",
     "eslint": "^8.31.0",
     "qieyun": "^0.13.5",
     "qieyun-examples": "^20220826.0.2",
-    "rollup": "^2.79.1",
+    "rollup": "^3.9.1",
+    "rollup-plugin-delete": "^2.0.0",
+    "rollup-plugin-dts": "^5.1.1",
     "rollup-plugin-string": "^3.0.0",
-    "rollup-plugin-terser": "^7.0.2",
     "rollup-plugin-typescript2": "^0.34.1",
     "typescript": "^4.9.4"
   }
