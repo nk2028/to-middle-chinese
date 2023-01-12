@@ -1,4 +1,4 @@
-declare module "*.dict.yaml" {
+declare module "*.txt" {
   const content: string;
   export default content;
 }
