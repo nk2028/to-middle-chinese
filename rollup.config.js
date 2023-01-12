@@ -9,13 +9,13 @@ export default [
   {
     input: "./src/index.ts",
     output: {
-      file: "./dist/index.js",
+      file: "./dist/index.cjs",
       format: "umd",
       exports: "named",
       name: "ToMiddleChinese",
       sourcemap: true,
     },
-    plugins: [typescript(), string({ include: "**/*.dict.yaml" }), terser()],
+    plugins: [typescript(), string({ include: "**/*.txt" }), terser()],
   },
   {
     input: "./dist/index.d.ts",

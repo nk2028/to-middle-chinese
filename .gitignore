@@ -1,11 +1,6 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-/src/dict/HKVariantsRev.txt
-/src/dict/HKVariantsRevPhrases.txt
-/src/dict/*.dict.yaml
-chars.tsv
-words.tsv
-extra_words.tsv
+/dict
 
 # dependencies
 /node_modules
